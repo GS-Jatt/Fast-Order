@@ -4,6 +4,8 @@ import Home from "./page/Home";
 import { Cart } from "./page/Cart";
 import Login from "./page/login";
 import { Toaster } from "react-hot-toast";
+import Oders from "./page/Oders";
+import OrderDetails from "./features/orders/OrderDetails";
 
 function App() {
   const routes = createBrowserRouter([
@@ -19,9 +21,17 @@ function App() {
           element: <Cart />,
         },
         {
-          path:'/login',
-          element:<Login/>
-        }
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/orders",
+          element: <Oders />,
+        },
+        {
+          path: "/orders/:id",
+          element: <OrderDetails />,
+        },
       ],
     },
   ]);
@@ -40,14 +50,13 @@ function App() {
             fontSize: "16px",
             maxWidth: "500px",
             padding: "16px 24px",
-            backgroundColor:'#02343F',
-            color:' #F0EDCC',
+            backgroundColor: "#02343F",
+            color: " #F0EDCC",
           },
         }}
       />
     </>
   );
-  
 }
 
 export default App;

@@ -16,7 +16,10 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #02343f;
+  padding: 0 24px;
+  background-color: #0a0c0c;
+
+  /* background-color: #02343f; */
   & ul {
     display: flex;
   }
@@ -26,7 +29,7 @@ const NavItem = styled.li`
   color: #f0edcc;
   gap: 10px;
   text-decoration: none;
-  padding: 16px 24px;
+  padding: 16px 0;
   list-style: none;
   font-weight: 700;
   text-transform: uppercase;
@@ -56,14 +59,13 @@ export default function Sidebar() {
       <ul>
         <NavItem>
           <p>
-            {" "}
+           
             {numItem} pizzas <span> Rs {totalPrice}</span>
           </p>
         </NavItem>
-        <NavItem></NavItem>
+
       </ul>
       <ul>
-        <NavItem></NavItem>
         <NavItem>
           <NavLink to={"/cart"}>OPEN CART &rarr; </NavLink>
         </NavItem>

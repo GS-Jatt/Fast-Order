@@ -34,7 +34,7 @@ const LoginDiv = styled.div`
   }
 `;
 const Input = styled.input`
-  padding: 10px 15px;
+  padding: 20px 15px;
   height: 24px;
   width: 94%;
   border-radius: 8px;

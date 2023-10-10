@@ -1,0 +1,40 @@
+import styled from "styled-components";
+import Oders, { StyledLink } from "../../page/Oders";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import OrderDetailItem from "./OrderDetailItem";
+
+const StyledDetails = styled.div`
+  padding: 15px;
+  color: #02343f;
+`;
+
+const Totale = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+`
+
+export default function OrderDetails() {
+  const { id } = useParams();
+  const order = useSelector((state) => state.cart.order).find(
+    (order) => order.id === +id
+  );
+  console.log(order);
+  return (
+    <StyledDetails>
+      <StyledLink to={-1}> &larr; Back to orders</StyledLink>
+      <h2>Order #{order.id} </h2>
+      {order.oder.map((item) => (
+        <OrderDetailItem key={item.id} item={item} />
+      ))}
+      <Totale>
+        <h3>{order.oder.reduce((acc, curr) => (acc += curr.quantity), 0)}</h3>
+        <h3>Total</h3>
+        <h3>
+          ₹{order.oder.reduce((acc, curr) => (acc += curr.totalPrice), 0)}
+        </h3>
+      </Totale>
+    </StyledDetails>
+  );
+}

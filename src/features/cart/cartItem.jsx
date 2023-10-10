@@ -10,6 +10,8 @@ const CartIte = styled(ListItem)`
   
 
    @media(max-width:423px) {
+    flex-direction: column;
+    align-items: start;
     & h3 {
       font-size: 14px;
     }
@@ -19,9 +21,14 @@ const CartIte = styled(ListItem)`
 const Section = styled.section`
   display: flex;
   justify-content: space-between;
+  gap: 22px;
+   @media(max-width:423px) {
+  width: 100%;
+}
   & div {
-    display: flex;
     gap: 8px;
+
+    display: flex;
   }
   & span {
     font-size: 14px;
@@ -29,6 +36,7 @@ const Section = styled.section`
     margin: auto 0;
   }
 `;
+
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -47,14 +55,14 @@ export default function CartItem({ item }) {
       </h3>
 
       <Section>
-        <div>
           <span>{item.totalPrice}Rs</span>
+        <div>
           <Button onClick={handleDec}> &ndash;</Button>
           <span>{item.quantity}</span>
           <Button onClick={() => dispatch(incQuantity(item.id))}>+</Button>
+        </div>
 
           <Button onClick={handleDelete}>Delete</Button>
-        </div>
       </Section>
     </CartIte>
   );
