@@ -9,7 +9,7 @@ const CartIte = styled(ListItem)`
   align-items: center;
   
 
-   @media(max-width:423px) {
+   @media(max-width:523px) {
     flex-direction: column;
     align-items: start;
     & h3 {
@@ -22,7 +22,7 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   gap: 22px;
-   @media(max-width:423px) {
+   @media(max-width:523px) {
   width: 100%;
 }
   & div {

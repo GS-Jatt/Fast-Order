@@ -1,12 +1,6 @@
 import { NavLink, useParams } from "react-router-dom";
 import styled from "styled-components";
-import {
-  HiHome,
-  HiOutlineBookOpen,
-  HiOutlineHome,
-  HiOutlineUser,
-  HiOutlineUsers,
-} from "react-icons/hi";
+
 import { useSelector } from "react-redux";
 import { createPortal } from "react-dom";
 
@@ -64,7 +58,7 @@ export default function Sidebar() {
       <ul>
         <NavItem>
           <p>
-            {numItem} pizzas <span> ₹{totalPrice}</span>
+            {numItem} {numItem > 1?'items' :'Item'} <span> ₹{totalPrice}</span>
           </p>
         </NavItem>
       </ul>

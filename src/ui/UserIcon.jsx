@@ -25,12 +25,13 @@ export default function UserIcon() {
     !user &&  navigate('/login')
     user && setIsOpen(!isOpen);
   }
-  return (<>
-    <User id="usericon" onClick={handleLogout}>
-      {user ? <span>{user.name}></span> : <span>login></span>}
-      <FaRegUserCircle className="icon" />
-    </User>
-    {isOpen && <AccountMenu setIsOpen={setIsOpen} user={user}/>}
-  </>
+  return (
+    <>
+      <User id="usericon" onClick={handleLogout}>
+        {user ? <span>{user.name} &gt;</span> : <span>login &gt;</span>}
+        <FaRegUserCircle className="icon" />
+      </User>
+      {isOpen && <AccountMenu setIsOpen={setIsOpen} user={user} />}
+    </>
   );
 }

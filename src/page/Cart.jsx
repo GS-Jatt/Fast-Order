@@ -9,6 +9,7 @@ const SectionLayout = styled.div`
     font-weight: 700;
     color: #245ea0;
     text-decoration: none;
+   
   }
 `;
 

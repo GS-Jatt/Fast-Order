@@ -11,7 +11,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   /* grid-column: 1/4; */
   grid-row: 1;
-
+  color: #02343f;
   height: 55px;
   padding-left: 20px;
   padding-right: 20px;

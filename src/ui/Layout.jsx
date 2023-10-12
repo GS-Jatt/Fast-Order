@@ -21,6 +21,7 @@ const Content = styled.div`
   & main {
     max-width: 49rem;
     margin: 0px auto;
+    margin-bottom: 50px;
     border-radius: 16px;
     background-color: #f0edcc;
   }

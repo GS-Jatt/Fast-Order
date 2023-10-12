@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import { List } from "../menu/Menu";
-import { ListItem } from "../menu/MenuItem";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./cartItem";
 import { Button } from "../../ui/Button";
+import { Empty } from "../../ui/Empty";
+
 import { addOder, clearCart } from "./CartSlice";
 import { useNavigate,  useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const BigButton = styled(Button)`
-  padding: 17px 24px;
-  width: 152px;
+  padding: 17px 20px;
+  width: 143px;
   height: auto;
-  margin-right: 20px;
+  margin-right: 3%;
   margin-left: 10px;
   margin-top: 10px;
 `;
@@ -25,6 +26,7 @@ const CartTotal = styled.div`
     margin-left: 140px;
   }
 `;
+
 
 export default function CartOverview() {
   const [searchParam, setSearchParam] = useSearchParams();
@@ -58,6 +60,10 @@ export default function CartOverview() {
     toast.success("Order is made succesfully");
     navigate(-1);
   }
+
+
+  if(!numItem) return <Empty> Your cart is still empty. Start adding some pizzas </Empty>;
+
   return (
     <>
       <List>
@@ -67,7 +73,7 @@ export default function CartOverview() {
       </List>
       <CartTotal>
         <h3>
-          {numItem} Items <span> ₹{totalPrice}</span>
+          {numItem} {numItem === 1? 'Item':'Items'} <span> ₹{totalPrice}</span>
         </h3>
       </CartTotal>
       <BigButton onClick={order}>ORDER</BigButton>
