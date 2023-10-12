@@ -18,6 +18,11 @@ const Nav = styled.nav`
   align-items: center;
   padding: 0 24px;
   background-color: #0a0c0c;
+  position: fixed;
+  /* width: 100%; */
+  bottom: -1px;
+  right: 0;
+  left: 0;
 
   /* background-color: #02343f; */
   & ul {

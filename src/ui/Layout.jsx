@@ -7,7 +7,8 @@ const StyledLayout = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   /* grid-template-columns: 1fr; */
-  height: 100vh;
+  height:100vh;
+  
   /* width: 100%; */
   background-color: #f0edcc;
 `;
@@ -15,6 +16,7 @@ const StyledLayout = styled.div`
 const Content = styled.div`
   grid-row: 2;
   overflow-y: scroll;
+  
 
   & main {
     max-width: 49rem;

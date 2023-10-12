@@ -34,6 +34,7 @@ const LoginDiv = styled.div`
   }
   & h2{
     margin-bottom: 30px;
+    text-align: center;
   }
 `;
 const Input = styled.input`
