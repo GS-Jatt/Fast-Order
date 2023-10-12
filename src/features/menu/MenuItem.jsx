@@ -93,7 +93,7 @@ export function MenuItem({ item }) {
         </div>
 
         <Section2>
-          <span>{item.unitPrice}Rs</span>
+          <span>₹{item.unitPrice}</span>
           <div>
             {inCart && (
               <>

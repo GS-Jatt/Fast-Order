@@ -15,7 +15,7 @@ const SectionLayout = styled.div`
 export function Cart() {
   return (
     <SectionLayout>
-      <Link to={-1}> &larr; Back to menu</Link>
+      <Link to={'/'}> &larr; Back to menu</Link>
       <CartOverview />
     </SectionLayout>
   );

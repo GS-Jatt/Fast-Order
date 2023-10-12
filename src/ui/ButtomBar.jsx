@@ -59,11 +59,9 @@ export default function Sidebar() {
       <ul>
         <NavItem>
           <p>
-           
-            {numItem} pizzas <span> Rs {totalPrice}</span>
+            {numItem} pizzas <span> ₹{totalPrice}</span>
           </p>
         </NavItem>
-
       </ul>
       <ul>
         <NavItem>

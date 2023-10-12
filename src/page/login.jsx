@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -32,6 +32,9 @@ const LoginDiv = styled.div`
     background-color: #02343f;
     color: #f0edcc;
   }
+  & h2{
+    margin-bottom: 30px;
+  }
 `;
 const Input = styled.input`
   padding: 20px 15px;
@@ -44,6 +47,7 @@ const Input = styled.input`
 `;
 
 export default function Login() {
+  const [searchParam] = useSearchParams();
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
@@ -56,6 +60,7 @@ export default function Login() {
   return (
     <StyledDiv>
       <LoginDiv>
+        {searchParam.get('Login') && <h2>To place your order,Please login</h2>}
         <form onSubmit={hanleSubmit}>
           <label>User Name</label>
           <Input

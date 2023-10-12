@@ -21,7 +21,7 @@ export default function Oders(){
 
     return (
       <StyledOders>
-        <StyledLink to={-1}> &larr; Back to menu</StyledLink>
+        <StyledLink to={'/'}> &larr; Back to menu</StyledLink>
 
         {!oders.length && (
           <Empty>Looks like you haven't placed an order yet</Empty>

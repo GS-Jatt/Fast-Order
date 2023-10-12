@@ -7,14 +7,18 @@ const H3 = styled.h3`
     
   }
 `;
+const Img = styled.img`
+  height:52px;
+`
 
 export default function Logo() {
   return (
     <div>
-      <H3>Fast</H3>
+      {/* <H3>Fast</H3>
       <H3>
         <span className="do">Food</span>
-      </H3>
+      </H3> */}
+      <Img src="/logo.svg"/>
     </div>
   );
 }

@@ -55,14 +55,14 @@ export default function CartItem({ item }) {
       </h3>
 
       <Section>
-          <span>{item.totalPrice}Rs</span>
+        <span>₹{item.totalPrice}</span>
         <div>
           <Button onClick={handleDec}> &ndash;</Button>
           <span>{item.quantity}</span>
           <Button onClick={() => dispatch(incQuantity(item.id))}>+</Button>
         </div>
 
-          <Button onClick={handleDelete}>Delete</Button>
+        <Button onClick={handleDelete}>Delete</Button>
       </Section>
     </CartIte>
   );

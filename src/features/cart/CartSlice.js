@@ -32,7 +32,7 @@ const cartSlice = createSlice({
         },
         addOder(state, action){
             
-            state.order.push({ date: new Date(),id:Date.now(), oder: state.cart});
+            state.order.push({ date: action.payload,id:Date.now(), oder: state.cart});
             state.cart =[];
         }
     }
