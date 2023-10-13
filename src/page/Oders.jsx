@@ -6,6 +6,7 @@ import OrderItem from "../features/orders/OrderItem";
 
 const StyledOders = styled.div`
   padding: 10px;
+  
 `;
 export const StyledLink = styled(Link)`
   display: inline-block;

@@ -44,9 +44,9 @@ export default function CartOverview() {
   
   function order() {
     if (!localStorage.getItem("user")) {
-      navigate("/login");
-      searchParam.set("Login", "1");
-      setSearchParam(searchParam);
+      navigate("/login?Login=1");
+      // searchParam.set("Login", "1");
+      // setSearchParam(searchParam);
       return "";
     }
     const date = new Date();
@@ -58,7 +58,7 @@ export default function CartOverview() {
     );
     
     toast.success("Order is made succesfully");
-    navigate(-1);
+    navigate('/');
   }
 
 

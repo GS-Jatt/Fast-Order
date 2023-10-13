@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 
 const StyledOrderItem = styled.div`
   padding: 10px 10px;
-  margin-top: 25px;
+  margin-top: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
   color: #02343f;
   border-bottom: 1px solid #02343f63;
   align-items: center;
+  
   & a {
     color: #f0edcc;
     text-decoration: none;
@@ -51,6 +52,7 @@ export default function OrderItem({ order }) {
     "December",
   ];
   const month = monthsArray[order.date.month];
+
   return (
     <StyledOrderItem>
       <Left>
