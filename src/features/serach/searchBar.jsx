@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ImSearch} from 'react-icons/im'
+import { ImSearch } from "react-icons/im";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
 const SectionLayout = styled.form`
@@ -14,14 +14,13 @@ const SectionLayout = styled.form`
 
   & button {
     cursor: pointer;
-    border: none;
+    border: 2.5px solid #d8c3a5;
     border-radius: 400px;
-    background-color: white;
+    background-color: #e4e0d1;
     width: 45px;
     height: 45px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
 
-    border: 1px solid #02343f6f;
     &:hover {
       box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
     }
@@ -33,8 +32,9 @@ const StyledSearchBar = styled.input`
   display: block;
   padding: 10px 20px;
   border-radius: 30px;
-  border: 1px solid #02343f7f;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border: 2.5px solid #d8c3a5;
+  box-shadow: 0px 0px 6px #d8c3a5;
+  background-color: #e4e0d1;
   font-size: 19px;
   /* color: #02343f; */
 
@@ -47,14 +47,14 @@ const StyledSearchBar = styled.input`
 export function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
   const ref = useRef();
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
-    searchParams.set('search', ref.current.value);
+    searchParams.set("search", ref.current.value);
     setSearchParams(searchParams);
   }
-  useEffect(()=>{
-    ref.current.value = searchParams.get("search")
-  })
+  useEffect(() => {
+    ref.current.value = searchParams.get("search");
+  });
 
   return (
     <SectionLayout onSubmit={handleSubmit}>

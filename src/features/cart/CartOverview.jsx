@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { List } from "../menu/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./cartItem";
@@ -16,6 +16,10 @@ const BigButton = styled(Button)`
   margin-right: 3%;
   margin-left: 10px;
   margin-top: 10px;
+  ${(props)=>props.gost?css`
+  background-color:transparent;
+  color: var(--main-color);
+  `: ''}
 `;
 const CartTotal = styled.div`
   display: flex;
@@ -77,7 +81,7 @@ export default function CartOverview() {
         </h3>
       </CartTotal>
       <BigButton onClick={order}>ORDER</BigButton>
-      <BigButton onClick={clear}>CLEAR CART</BigButton>
+      <BigButton gost={true} onClick={clear}>CLEAR CART</BigButton>
     </>
   );
 }

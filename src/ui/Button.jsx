@@ -9,10 +9,10 @@ export const Button = styled.button`
   border: 1px solid;
 
   padding: 9px;
-  background-color:var(--main-color);
+  background-color: var(--main-color);
   color: var(--bg-color);
   font-weight: 900;
   &:hover {
-    background-color: #02343f9d;
+    background-color: #3f3d3abc;
   }
 `;

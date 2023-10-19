@@ -8,7 +8,7 @@ const H3 = styled.h3`
   }
 `;
 const Img = styled.img`
-  height:52px;
+  height:48px;
 `
 
 export default function Logo() {
