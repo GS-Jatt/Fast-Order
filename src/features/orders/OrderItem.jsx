@@ -8,12 +8,12 @@ const StyledOrderItem = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
-  color: #02343f;
+  /* color: #02343f; */
   border-bottom: 1px solid #02343f63;
   align-items: center;
   
   & a {
-    color: #f0edcc;
+    color: var(--bg-color);
     text-decoration: none;
   }
 `;

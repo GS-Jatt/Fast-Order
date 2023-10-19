@@ -36,7 +36,7 @@ const StyledSearchBar = styled.input`
   border: 1px solid #02343f7f;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
   font-size: 19px;
-  color: #02343f;
+  /* color: #02343f; */
 
   &:focus {
     outline: none;

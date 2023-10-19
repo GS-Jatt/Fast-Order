@@ -14,7 +14,7 @@ export const ListItem = styled.li`
   padding: 10px 0px;
   gap: 10px;
   border-bottom: 1px solid rgb(2, 52, 63) ;
-  color: #02343f;
+  /* color: #02343f; */
   &:last-child{
     border: none;
   }
@@ -23,7 +23,7 @@ export const ListItem = styled.li`
   }
 
   & h3 {
-    color: #02343f;
+    /* color: #02343f; */
     font-size: 16px;
   }
   & p {

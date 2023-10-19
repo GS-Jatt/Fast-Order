@@ -25,7 +25,7 @@ const Nav = styled.nav`
 `;
 
 const NavItem = styled.li`
-  color: #f0edcc;
+  color: var(--bg-color);
   gap: 10px;
   text-decoration: none;
   padding: 16px 0;
@@ -37,7 +37,7 @@ const NavItem = styled.li`
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
-    color: #f0edcc;
+    color: var(--bg-color);
   }
   & span {
     text-transform: none;

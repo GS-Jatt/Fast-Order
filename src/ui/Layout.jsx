@@ -10,7 +10,7 @@ const StyledLayout = styled.div`
   height:100vh;
   
   /* width: 100%; */
-  background-color: #f0edcc;
+  background-color: var(--bg-color);
 `;
 
 const Content = styled.div`
@@ -23,7 +23,7 @@ const Content = styled.div`
     margin: 0px auto;
     margin-bottom: 50px;
     border-radius: 16px;
-    background-color: #f0edcc;
+    /* background-color: #f0edcc; */
   }
 `;
 

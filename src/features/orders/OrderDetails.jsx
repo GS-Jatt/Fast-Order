@@ -6,7 +6,7 @@ import OrderDetailItem from "./OrderDetailItem";
 
 const StyledDetails = styled.div`
   padding: 15px;
-  color: #02343f;
+  /* color: #02343f; */
   & h2{
     margin-bottom: 15px;
   }

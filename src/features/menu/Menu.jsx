@@ -10,7 +10,8 @@ import {Empty} from '../../ui/Empty'
 
 export const List = styled.ul`
   padding: 10px;
-  background-color: #f0edcc;
+  
+  /* background-color: #f0edcc; */
 `;
 
 export function Menu() {

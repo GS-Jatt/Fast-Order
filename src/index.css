@@ -2,6 +2,9 @@ body {
     /* background-color: #000; */
     /* margin: 0px; */
     font-family: Roboto Mono, monospace;
+    --main-color:#02343F;
+    --bg-color:#eae7dc;
+    color: var(--main-color);
 }
 
 * {
@@ -12,4 +15,5 @@ body {
 
 /*  
 #F0EDCC
-#02343F*/
+#02343F
+#eae7dc*/

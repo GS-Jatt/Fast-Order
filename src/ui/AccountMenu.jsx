@@ -16,7 +16,7 @@ const Menu = styled.div`
   padding-right: 0;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
   background-color: #f0edcc;
-  color: #02343f;
+  /* color: #02343f; */
 `;
 const MenuItem = styled(Link)`
   text-decoration: none;

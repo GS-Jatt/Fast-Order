@@ -16,7 +16,7 @@ const LoginDiv = styled.div`
   border-radius: 8px;
   padding: 30px 50px;
   /* background-color: #02343f6e; */
-  color: #02343f;
+  /* color: #02343f; */
   & label {
     font-size: 19px;
     letter-spacing: 3px;
@@ -29,8 +29,8 @@ const LoginDiv = styled.div`
     font-weight: 900;
     letter-spacing: 3px;
     margin-top: 45px;
-    background-color: #02343f;
-    color: #f0edcc;
+    background-color: var(--main-color);
+    color: var(--bg-color);
   }
   & h2{
     margin-bottom: 30px;
