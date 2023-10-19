@@ -2,7 +2,8 @@ body {
     /* background-color: #000; */
     /* margin: 0px; */
     font-family: Roboto Mono, monospace;
-    --main-color:#02343F;
+    /* --main-color:#02343F; */
+    --main-color: #444341;
     --bg-color:#eae7dc;
     color: var(--main-color);
 }
