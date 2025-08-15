@@ -6,7 +6,6 @@ import OrderItem from "../features/orders/OrderItem";
 
 const StyledOders = styled.div`
   padding: 10px;
-  
 `;
 export const StyledLink = styled(Link)`
   display: inline-block;
@@ -27,7 +26,7 @@ export default function Oders() {
       ) : (
         oders
           .toReversed()
-          .map((oder) => <OrderItem key={oder.oder.id} order={oder} />)
+          .map((order) => <OrderItem key={order.orderId} order={order} />)
       )}
     </StyledOders>
   );

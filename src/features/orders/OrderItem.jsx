@@ -11,7 +11,7 @@ const StyledOrderItem = styled.div`
   /* color: #02343f; */
   border-bottom: 1px solid #02343f63;
   align-items: center;
-  
+
   & a {
     color: var(--bg-color);
     text-decoration: none;
@@ -35,7 +35,7 @@ export default function OrderItem({ order }) {
   const totalItem = order.oder.reduce((acc, cur) => (acc += cur.quantity), 0);
   const totalPrice = order.oder.reduce(
     (acc, cur) => (acc += cur.totalPrice),
-    0
+    0,
   );
   const monthsArray = [
     "January",
@@ -61,12 +61,14 @@ export default function OrderItem({ order }) {
       </Left>
       <Meddle>
         <h4>
-          {order.date.day === new Date().getDate() ? "Today" : `${ order.date.day},${month.slice(0, 3)}`}
+          {order.date.day === new Date().getDate()
+            ? "Today"
+            : `${order.date.day},${month.slice(0, 3)}`}
         </h4>
         <h4>{order.status}</h4>
       </Meddle>
       <Button>
-        <Link to={`${order.id}`}>Details</Link>
+        <Link to={`${order.orderId}`}>Details</Link>
       </Button>
     </StyledOrderItem>
   );

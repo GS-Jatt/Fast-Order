@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { login } from "../services/login";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -32,7 +33,7 @@ const LoginDiv = styled.div`
     background-color: var(--main-color);
     color: var(--bg-color);
   }
-  & h2{
+  & h2 {
     margin-bottom: 30px;
     text-align: center;
   }
@@ -49,20 +50,22 @@ const Input = styled.input`
 
 export default function Login() {
   const [searchParam] = useSearchParams();
-  const [name, setName] = useState("");
+  const [name, setName] = useState("test@user.com");
   const navigate = useNavigate();
-  const [password, setPassword] = useState("");
-  function hanleSubmit(e) {
+  const [password, setPassword] = useState("testuser");
+  async function handleSubmit(e) {
     e.preventDefault();
-    const user = { name: name, password: password };
-    localStorage.setItem("user", JSON.stringify(user));
-    navigate(-1);
+    // const user = { name: name, password: password };
+    const { data, error } = await login(name, password);
+    console.log("data", data);
+    data && localStorage.setItem("user", JSON.stringify(data));
+    error == null && navigate(-1);
   }
   return (
     <StyledDiv>
       <LoginDiv>
-        {searchParam.get('Login') && <h2>To place your order,Please login</h2>}
-        <form onSubmit={hanleSubmit}>
+        {searchParam.get("Login") && <h2>To place your order,Please login</h2>}
+        <form onSubmit={handleSubmit}>
           <label>User Name</label>
           <Input
             type="text"
