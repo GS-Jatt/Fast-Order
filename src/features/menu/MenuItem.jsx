@@ -13,13 +13,14 @@ export const ListItem = styled.li`
   display: flex;
   padding: 10px 0px;
   gap: 10px;
-  border-bottom: 1px solid rgb(2, 52, 63) ;
+  border-bottom: 1px solid rgb(2, 52, 63);
   /* color: #02343f; */
-  &:last-child{
+  &:last-child {
     border: none;
   }
   & img {
     height: 96px;
+    border-radius: 12px;
   }
 
   & h3 {
@@ -37,6 +38,7 @@ const Section2 = styled.section`
   & div {
     display: flex;
     gap: 8px;
+    align-items: center;
   }
   & span {
     font-size: 14px;
@@ -63,9 +65,9 @@ export function MenuItem({ item }) {
   };
 
   const currentQuantity = useSelector((state) => state.cart.cart).find(
-    (el) => el.id === item.id)?.quantity;
+    (el) => el.id === item.id,
+  )?.quantity;
   const inCart = currentQuantity ? true : false;
-
 
   function handleDelete() {
     dispatch(deleteItem(item.id));
@@ -74,9 +76,9 @@ export function MenuItem({ item }) {
     dispatch(addItem(cartItem));
   }
 
-  function handleDec(){
-    if(currentQuantity === 1) return handleDelete()
-    dispatch(decQuantity(item.id))
+  function handleDec() {
+    if (currentQuantity === 1) return handleDelete();
+    dispatch(decQuantity(item.id));
   }
 
   return (
@@ -105,9 +107,13 @@ export function MenuItem({ item }) {
               </>
             )}
             {inCart ? (
-              <Button onClick={handleDelete}>Delete</Button>
+              <Button $px={16} onClick={handleDelete}>
+                Delete
+              </Button>
             ) : (
-              <Button onClick={handleAdd}>Add to Cart</Button>
+              <Button $px={16} onClick={handleAdd}>
+                Add to Cart
+              </Button>
             )}
           </div>
         </Section2>

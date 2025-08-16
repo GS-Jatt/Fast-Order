@@ -16,10 +16,10 @@ export async function login(email, password) {
       },
       method: "POST",
     });
-    if (!res.ok) {
-      return { error: res.body, data: null };
-    }
 
+    if (!res.ok) {
+      return { error: await res.text(), data: null };
+    }
     const data = await res.json();
     return { data, error: null };
   } catch (err) {

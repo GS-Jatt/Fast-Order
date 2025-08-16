@@ -7,9 +7,10 @@ import { Button } from "../../ui/Button";
 const CartIte = styled(ListItem)`
   justify-content: space-between;
   align-items: center;
-  
-
-   @media(max-width:523px) {
+  h3 {
+    font-weight: 400;
+  }
+  @media (max-width: 523px) {
     flex-direction: column;
     align-items: start;
     & h3 {
@@ -22,9 +23,9 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   gap: 22px;
-   @media(max-width:523px) {
-  width: 100%;
-}
+  @media (max-width: 523px) {
+    width: 100%;
+  }
   & div {
     gap: 8px;
 
@@ -36,7 +37,6 @@ const Section = styled.section`
     margin: auto 0;
   }
 `;
-
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -62,7 +62,9 @@ export default function CartItem({ item }) {
           <Button onClick={() => dispatch(incQuantity(item.id))}>+</Button>
         </div>
 
-        <Button onClick={handleDelete}>Delete</Button>
+        <Button $px={16} onClick={handleDelete}>
+          Delete
+        </Button>
       </Section>
     </CartIte>
   );

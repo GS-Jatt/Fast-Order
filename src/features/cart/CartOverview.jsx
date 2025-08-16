@@ -6,7 +6,7 @@ import { Button } from "../../ui/Button";
 import { Empty } from "../../ui/Empty";
 
 import { addOder, clearCart } from "./CartSlice";
-import { useNavigate,  useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const BigButton = styled(Button)`
@@ -16,24 +16,25 @@ const BigButton = styled(Button)`
   margin-right: 3%;
   margin-left: 10px;
   margin-top: 10px;
-  ${(props)=>props.gost?css`
-  background-color:transparent;
-  color: var(--main-color);
-  `: ''}
+  ${(props) =>
+    props.gost
+      ? css`
+          background-color: transparent;
+          color: var(--main-color);
+        `
+      : ""}
 `;
 const CartTotal = styled.div`
   display: flex;
   padding: 10px 10px;
   border-top: 1px solid rgb(2, 52, 63);
   color: #02343f;
-  & span{
+  & span {
     margin-left: 140px;
   }
 `;
 
-
 export default function CartOverview() {
-  const [searchParam, setSearchParam] = useSearchParams();
   const data = useSelector((state) => state.cart.cart);
   const numItem = data.reduce((acc, cur) => (acc += cur.quantity), 0);
   const totalPrice = data.reduce((acc, cur) => (acc += cur.totalPrice), 0);
@@ -42,10 +43,10 @@ export default function CartOverview() {
 
   function clear() {
     dispatch(clearCart());
-    toast.success("Cart is clear succesfully");
-    navigate('/');
+    toast.success("Cart is clear successfully");
+    navigate("/");
   }
-  
+
   function order() {
     if (!localStorage.getItem("user")) {
       navigate("/login?Login=1");
@@ -58,15 +59,15 @@ export default function CartOverview() {
       addOder({
         day: date.getDate(),
         month: date.getMonth(),
-      })
+      }),
     );
-    
-    toast.success("Order is made succesfully");
-    navigate('/');
+
+    toast.success("Order is made successfully");
+    navigate("/");
   }
 
-
-  if(!numItem) return <Empty> Your cart is still empty. Start adding some pizzas </Empty>;
+  if (!numItem)
+    return <Empty> Your cart is still empty. Start adding some pizzas </Empty>;
 
   return (
     <>
@@ -77,11 +78,14 @@ export default function CartOverview() {
       </List>
       <CartTotal>
         <h3>
-          {numItem} {numItem === 1? 'Item':'Items'} <span> ₹{totalPrice}</span>
+          {numItem} {numItem === 1 ? "Item" : "Items"}{" "}
+          <span> ₹{totalPrice}</span>
         </h3>
       </CartTotal>
       <BigButton onClick={order}>ORDER</BigButton>
-      <BigButton gost={true} onClick={clear}>CLEAR CART</BigButton>
+      <BigButton gost={true} onClick={clear}>
+        CLEAR CART
+      </BigButton>
     </>
   );
 }

@@ -1,8 +1,7 @@
 import Navbar from "./Navbar";
-import ButtomBar from "./ButtomBar";
 import { Outlet } from "react-router-dom";
 import { styled } from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getUser } from "../services/login";
 import { getCart } from "../services/cart";

@@ -1,12 +1,11 @@
 import { Menu } from "../features/menu/Menu";
-import ButtomBar from '../ui/ButtomBar';
-
+import BottomBar from "../ui/BottomBar";
 
 export default function Home() {
   return (
     <>
       <Menu />
-      <ButtomBar/>
+      <BottomBar />
     </>
   );
 }

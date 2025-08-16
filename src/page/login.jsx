@@ -2,6 +2,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { login } from "../services/login";
+import { getCart } from "../services/cart";
+import { getOrder } from "../services/order";
+import { useDispatch } from "react-redux";
+import { setCart, setOrder } from "../features/cart/CartSlice";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -29,19 +33,26 @@ const LoginDiv = styled.div`
     border-radius: 8px;
     font-weight: 900;
     letter-spacing: 3px;
-    margin-top: 45px;
+    margin-top: 15px;
     background-color: var(--main-color);
     color: var(--bg-color);
+    cursor: pointer;
   }
   & h2 {
     margin-bottom: 30px;
-    text-align: center;
+    // text-align: center;
+  }
+  & span {
+    display: block;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    color: red;
   }
 `;
 const Input = styled.input`
   padding: 20px 15px;
   height: 24px;
-  width: 94%;
+  width: 100%;
   border-radius: 8px;
   border: 1px solid #696464;
   margin-top: 10px;
@@ -52,14 +63,29 @@ export default function Login() {
   const [searchParam] = useSearchParams();
   const [name, setName] = useState("test@user.com");
   const navigate = useNavigate();
+  const dispach = useDispatch();
   const [password, setPassword] = useState("testuser");
+  const [error, setError] = useState(null);
   async function handleSubmit(e) {
     e.preventDefault();
+    error && setError(null);
     // const user = { name: name, password: password };
-    const { data, error } = await login(name, password);
+    const { data, error: err } = await login(name, password);
     console.log("data", data);
     data && localStorage.setItem("user", JSON.stringify(data));
-    error == null && navigate(-1);
+    err == null && navigate(-1);
+    err && setError("incorrect email or password");
+    if (!searchParam.get("Login") && data) {
+      function setcart(data) {
+        dispach(setCart(data));
+      }
+      function setorder(data) {
+        data && data.length > 0 && dispach(setOrder(data));
+      }
+
+      getCart(setcart);
+      getOrder(setorder);
+    }
   }
   return (
     <StyledDiv>
@@ -81,7 +107,7 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
+          {error && <span>{error}</span>}
           <button type="submit">Login</button>
         </form>
       </LoginDiv>

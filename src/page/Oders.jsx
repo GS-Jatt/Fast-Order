@@ -13,6 +13,7 @@ export const StyledLink = styled(Link)`
   color: #245ea0;
   text-decoration: none;
   margin-bottom: 10px;
+  margin-top: 10px;
 `;
 
 export default function Oders() {

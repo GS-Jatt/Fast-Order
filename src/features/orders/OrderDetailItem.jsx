@@ -5,15 +5,20 @@ const StyledDI = styled.div`
   border-bottom: 1px solid #02343f7f;
   display: flex;
   justify-content: space-between;
+  & h4 {
+    font-weight: 400;
+  }
 `;
 
 export default function OrderDetailItem({ item }) {
   return (
     <StyledDI>
       <h4>
-        {item.quantity} X {item.name}
+        <strong>{item.quantity}</strong> X {item.name}
       </h4>
-      <h4>₹{item.totalPrice}</h4>
+      <h4>
+        <strong>₹{item.totalPrice}</strong>
+      </h4>
     </StyledDI>
   );
 }

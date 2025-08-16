@@ -19,15 +19,17 @@ const StyledOrderItem = styled.div`
 `;
 
 const Left = styled.div`
-  text-align: center;
+  text-align: left;
   & h3 {
     margin-bottom: 6px;
+    font-weight: 600;
   }
 `;
 const Meddle = styled.div`
-  text-align: center;
+  text-align: left;
   & h4 {
     margin-bottom: 6px;
+    font-weight: 400;
   }
 `;
 
@@ -67,9 +69,9 @@ export default function OrderItem({ order }) {
         </h4>
         <h4>{order.status}</h4>
       </Meddle>
-      <Button>
-        <Link to={`${order.orderId}`}>Details</Link>
-      </Button>
+      <Link to={`${order.orderId}`}>
+        <Button style={{ width: "100%" }}>Details</Button>
+      </Link>
     </StyledOrderItem>
   );
 }

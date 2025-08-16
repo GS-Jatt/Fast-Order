@@ -17,18 +17,19 @@ const User = styled.div`
 `;
 
 export default function UserIcon() {
-    const navigate = useNavigate();
-    const [isOpen , setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
 
   function handleLogout() {
-    !user &&  navigate('/login')
+    !user && navigate("/login");
     user && setIsOpen(!isOpen);
   }
   return (
     <>
       <User id="usericon" onClick={handleLogout}>
-        {user ? <span>{user.name} &gt;</span> : <span>login &gt;</span>}
+        {user ? <span>{user.name} </span> : <span>login </span>}
+
         <FaRegUserCircle className="icon" />
       </User>
       {isOpen && <AccountMenu setIsOpen={setIsOpen} user={user} />}

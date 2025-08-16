@@ -11,8 +11,9 @@ const Menu = styled.div`
   position: fixed;
   right: 25px;
   top: 60px;
-  width: 120px;
+  width: 150px;
   padding: 15px 25px;
+  border-radius: 8px;
   padding-right: 0;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-color);
@@ -43,7 +44,10 @@ export default function AccountMenu({ setIsOpen, user }) {
 
   useEffect(() => {
     function handleClickOutside(e) {
-      if (e.target !== ref.current && e.target.closest('#usericon') !== document.getElementById("usericon")) {
+      if (
+        e.target !== ref.current &&
+        e.target.closest("#usericon") !== document.getElementById("usericon")
+      ) {
         setIsOpen((isopen) => !isopen);
       }
     }
@@ -57,8 +61,8 @@ export default function AccountMenu({ setIsOpen, user }) {
     };
   }, [setIsOpen]);
 
-  function handleSingout(){
-    console.log('sad')
+  function handleSingout() {
+    console.log("sad");
     localStorage.removeItem("user");
     setIsOpen((isopen) => !isopen);
   }

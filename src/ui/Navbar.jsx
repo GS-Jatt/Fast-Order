@@ -1,6 +1,5 @@
 import Logo from "./Logo";
 import styled from "styled-components";
-import Sidebar from "./ButtomBar";
 import UserIcon from "./UserIcon";
 
 const Nav = styled.nav`
@@ -27,12 +26,11 @@ const Nav = styled.nav`
 `;
 
 export default function Navbar() {
-  
   return (
     <>
       <Nav>
         <Logo />
-        <UserIcon/>
+        <UserIcon />
       </Nav>
     </>
   );
