@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
   align-items: center;
 `;
 const LoginDiv = styled.div`
-  width: 600px;
+  max-width: 600px;
   height: 340px;
   /* border: solid black; */
   border-radius: 8px;
