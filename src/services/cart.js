@@ -30,6 +30,5 @@ export async function getCart(setCart) {
     return;
   }
   const data = await res.json();
-  console.log("cart", data);
   setCart(data);
 }

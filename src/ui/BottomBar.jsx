@@ -47,7 +47,6 @@ const NavItem = styled.li`
 
 export default function Sidebar() {
   const pa = useParams();
-  console.log(pa);
   const cart = useSelector((state) => state.cart.cart);
   const numItem = cart.reduce((acc, cur) => (acc += cur.quantity), 0);
   const totalPrice = cart.reduce((acc, cur) => (acc += cur.totalPrice), 0);
@@ -58,7 +57,8 @@ export default function Sidebar() {
       <ul>
         <NavItem>
           <p>
-            {numItem} {numItem > 1?'items' :'Item'} <span> ₹{totalPrice}</span>
+            {numItem} {numItem > 1 ? "items" : "Item"}{" "}
+            <span> ₹{totalPrice}</span>
           </p>
         </NavItem>
       </ul>
@@ -68,6 +68,6 @@ export default function Sidebar() {
         </NavItem>
       </ul>
     </Nav>,
-    document.getElementById("layout")
+    document.getElementById("layout"),
   );
 }

@@ -62,7 +62,6 @@ export default function AccountMenu({ setIsOpen, user }) {
   }, [setIsOpen]);
 
   function handleSingout() {
-    console.log("sad");
     localStorage.removeItem("user");
     setIsOpen((isopen) => !isopen);
   }

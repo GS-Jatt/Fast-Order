@@ -1,6 +1,6 @@
 import { SERVER_URL } from "../utils/util";
 
-const API_URL = "https://react-fast-pizza-api.onrender.com/api";
+// const API_URL = "https://react-fast-pizza-api.onrender.com/api";
 
 export async function getMenu() {
   const res = await fetch(`${SERVER_URL}menu`);

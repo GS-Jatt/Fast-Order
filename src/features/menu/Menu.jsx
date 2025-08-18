@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import Loader from "../../ui/Loader";
 import { MenuItem } from "./MenuItem";
-import { menuData } from "../../services/Data";
 import { SearchBar } from "../serach/searchBar";
 import { useSearchParams } from "react-router-dom";
 import { Empty } from "../../ui/Empty";

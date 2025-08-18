@@ -6,7 +6,7 @@ import { Button } from "../../ui/Button";
 import { Empty } from "../../ui/Empty";
 
 import { addOder, clearCart } from "./CartSlice";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const BigButton = styled(Button)`

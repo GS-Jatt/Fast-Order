@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { getUser, login } from "../services/login";
+import { login } from "../services/login";
 import { getCart } from "../services/cart";
 import { getOrder } from "../services/order";
 import { useDispatch } from "react-redux";
@@ -73,7 +73,6 @@ export default function Login() {
     error && setError(null);
     // const user = { name: name, password: password };
     const { data, error: err } = await login(name, password);
-    console.log("data", data);
     data && localStorage.setItem("user", JSON.stringify(data));
     err == null && navigate(-1);
     err && setError("incorrect email or password");

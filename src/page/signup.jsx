@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { signup } from "../services/signup";
-import { getUser } from "../services/login";
 import { useEffect } from "react";
 
 const StyledDiv = styled.div`
@@ -70,7 +69,6 @@ export default function Signup() {
     error && setError(null);
     // const user = { name: name, password: password };
     const { data, error: err } = await signup(email, password, name);
-    console.log("data", data);
     data && localStorage.setItem("user", JSON.stringify(data));
     err == null && navigate("/");
     err && setError(err);

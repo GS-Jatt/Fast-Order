@@ -1,4 +1,4 @@
-import { fromUnixTime, getUnixTime, toDate } from "date-fns";
+import { fromUnixTime, getUnixTime } from "date-fns";
 import { SERVER_URL } from "../utils/util";
 import { getUser } from "./login";
 
@@ -45,6 +45,5 @@ export async function getOrder(setOrder) {
     });
   }
 
-  console.log("order", data);
   setOrder(data);
 }
