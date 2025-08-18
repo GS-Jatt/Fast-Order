@@ -6,6 +6,7 @@ import Login from "./page/login";
 import { Toaster } from "react-hot-toast";
 import Oders from "./page/Oders";
 import OrderDetails from "./features/orders/OrderDetails";
+import Signup from "./page/signup";
 
 function App() {
   const routes = createBrowserRouter([
@@ -24,6 +25,8 @@ function App() {
           path: "/login",
           element: <Login />,
         },
+        { path: "/signup", element: <Signup /> },
+
         {
           path: "/orders",
           element: <Oders />,
