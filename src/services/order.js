@@ -41,7 +41,7 @@ export async function getOrder(setOrder) {
     data.forEach((item) => {
       item.oder = JSON.parse(item.oder);
       const date = fromUnixTime(item.date);
-      item.date = { month: date.getMonth(), day: date.getDay() };
+      item.date = { month: date.getMonth(), day: date.getDate() };
     });
   }
 
